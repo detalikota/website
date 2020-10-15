@@ -1,3 +1,9 @@
-def search4letters(word,letters):
-    return set(word).intersection(set(letters))
-prin ('hi')
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello() -> str:
+    return 'Hello from Flask!'
+
+app.run()
