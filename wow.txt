@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 new text here. Here is something too
+=======
+deleted all the other text
+>>>>>>> changes
