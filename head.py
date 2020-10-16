@@ -1,5 +1,5 @@
 from flask import Flask
-from vsearch import search4letter
+from vsearch import search4letters
 app = Flask(__name__)
 
 @app.route('/')
@@ -7,8 +7,8 @@ def hello() -> str:
     return 'Hello from Flask!'
 
 @app.route('/search4')
-def do_search(x,y):
-    return search4letter('life, the universe, and everything!', 'eiru,!')
+def do_search():
+    return str(search4letters ('life, the universe, and everything!', 'eiru,!'))
 
 
 app.run()
