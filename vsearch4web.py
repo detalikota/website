@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, escape
 from vsearch import search4letters
 app = Flask(__name__)
 
 def log_request (req: 'flask_request', res: str) -> None:
     with open('log.txt', 'a') as log:
-        print (req,res, file=log)
+        print (req.form, req.remote_addr, req.user_agent, res, file=log, sep='|')
 
 @app.route('/search4', methods=['POST'])
 def do_search():
@@ -28,6 +28,9 @@ def view_the_log() -> str:
             for item in line.split('|'):
                 contents[-1].append(escape(item))
     return str(contents)
+<<<<<<< HEAD
     return contents
+=======
+>>>>>>> 56d4924e772498dea1d036719f96ae9b908d063e
 if __name__=='__main__':
     app.run(debug=True)
